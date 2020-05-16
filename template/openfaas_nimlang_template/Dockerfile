@@ -17,22 +17,17 @@ RUN mkdir -p /home/nimble-app && mkdir -p /home/nimble-app/function && chown -R 
 
 WORKDIR /home/nimble-app
 
-COPY index.nim                             .
-COPY ../openfaas_nimlang_template.nimble   .
+COPY openfaas_nimlang_template.nim         .
+COPY openfaas_nimlang_template.nimble      .
 COPY function/handler.nim                  ./function
 
-USER app
-ENV PATH=$PATH:/home/app/.local/bin:/home/app/python/bin/
-ENV PYTHONPATH=$PYTHONPATH:/home/app/python
+USER root
 
 RUN nimble install -d
 RUN nim c openfaas_nimlang_template.nim
 
-ENV USER=app
-
-RUN chmod +x /usr/bin/fwatchdog
-
 USER app
+ENV USER=app
 
 ENV fprocess="openfaas_nimlang_template"
 EXPOSE 8080
