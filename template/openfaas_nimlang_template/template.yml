@@ -1,0 +1,4 @@
+language: nim
+fprocess: openfaas_nimlang_template
+welcome_message: |
+  This is a nim lang basic function.
