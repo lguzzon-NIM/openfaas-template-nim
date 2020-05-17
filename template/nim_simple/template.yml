@@ -1,4 +1,4 @@
 language: nim
-fprocess: openfaas_nimlang_template
+fprocess: nim_basic
 welcome_message: |
   This is a nim lang basic function.

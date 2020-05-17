@@ -5,7 +5,7 @@ author        = "Shubham Kumar"
 description   = "OpenFaas Simple Template"
 license       = "MIT"
 srcDir        = "."
-bin           = @["openfaas_nimlang_template"]
+bin           = @["nim_simple"]
 
 
 

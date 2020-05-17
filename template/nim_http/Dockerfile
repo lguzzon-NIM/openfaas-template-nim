@@ -17,19 +17,19 @@ RUN mkdir -p /home/nimble-app && mkdir -p /home/nimble-app/function && chown -R 
 
 WORKDIR /home/nimble-app
 
-COPY openfaas_nimlang_template.nim         .
-COPY openfaas_nimlang_template.nimble      .
+COPY nim_http.nim                          .
+COPY nim_http.nimble                       .
 COPY function/handler.nim                  ./function
 
 USER root
 
 RUN nimble install -d
-RUN nim c openfaas_nimlang_template.nim
+RUN nim c nim_http.nim
 
 USER app
 ENV USER=app
 
-ENV fprocess="openfaas_nimlang_template"
+ENV fprocess="nim_http"
 EXPOSE 8080
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1

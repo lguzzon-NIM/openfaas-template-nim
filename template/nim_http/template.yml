@@ -1,0 +1,4 @@
+language: nim_http
+fprocess: nim_http
+welcome_message: |
+  This is a nim lang http function.
