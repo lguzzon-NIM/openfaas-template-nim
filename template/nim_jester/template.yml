@@ -1,0 +1,4 @@
+language: nim_jester
+fprocess: nim_jester
+welcome_message: |
+  This is a nim lang jester function.
