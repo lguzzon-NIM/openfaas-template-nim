@@ -1,4 +1,4 @@
-FROM openfaas/of-watchdog:0.7.7 as watchdog
+FROM ghcr.io/openfaas/of-watchdog:0.9.2 as watchdog
 
 FROM nimlang/nim:latest-alpine-onbuild
 
