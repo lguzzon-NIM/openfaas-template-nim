@@ -10,7 +10,7 @@ This repository contains 3 nim-lang templates:
 To use:
 
 ```
-> faas-cli template pull https://github.com/namithubot/openfaas-template-nim
+> faas-cli template pull https://github.com/lguzzon-NIM/openfaas-template-nim
 > faas-cli new --list
 Languages available as templates:
 - nim_http
